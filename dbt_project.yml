@@ -1,0 +1,166 @@
+
+# Name your package! Package names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'data_challenge'
+version: '1.0'
+
+# This setting configures which "profile" dbt uses for this project. Profiles contain
+# database connection information, and should be configured in the  ~/.dbt/profiles.yml file
+profile: 'challenge'
+
+# These configurations specify where dbt should look for different types of files.
+# The `source-paths` config, for example, states that source models can be found
+# in the "models/" directory. You probably won't need to change these!
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_modules"
+
+# You can define configurations for models in the `source-paths` directory here.
+# Using these configurations, you can enable or disable models, change how they
+# are materialized, and more!
+
+# In this example config, we tell dbt to build all models in the example/ directory
+# as views (the default). These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
+models:
+  data_challenge:
+      schema: analytics
+
+seeds:
+  data_challenge:
+    enabled: true
+    abc_posts:
+      column_types:
+        ID: integer
+        post_author: integer
+        post_date: timestamp
+        post_date_gmt: timestamp
+        post_title: varchar(5000)
+        post_excerpt: integer
+        post_status: varchar(20)
+        comment_status: varchar(20)
+        ping_status: varchar(20)
+        post_password: varchar(255)
+        post_name: varchar(200)
+        to_ping: varchar(5000)
+        pinged: varchar(5000)
+        post_modified: timestamp
+        post_modified_gmt: timestamp
+        post_content_filtered: varchar(500)
+        post_parent: integer
+        guid: varchar(255)
+        menu_order: integer
+        post_type: varchar(20)
+        post_mime_type: varchar(100)
+        comment_count: integer
+    aks_posts:
+      column_types:
+        ID: integer
+        post_author: integer
+        post_date: timestamp
+        post_date_gmt: timestamp
+        post_title: varchar(5000)
+        post_excerpt: integer
+        post_status: varchar(20)
+        comment_status: varchar(20)
+        ping_status: varchar(20)
+        post_password: varchar(255)
+        post_name: varchar(200)
+        to_ping: varchar(5000)
+        pinged: varchar(5000)
+        post_modified: timestamp
+        post_modified_gmt: timestamp
+        post_content_filtered: varchar(500)
+        post_parent: integer
+        guid: varchar(255)
+        menu_order: integer
+        post_type: varchar(20)
+        post_mime_type: varchar(100)
+        comment_count: integer
+    alz_posts:
+      column_types:
+        ID: integer
+        post_author: integer
+        post_date: timestamp
+        post_date_gmt: timestamp
+        post_title: varchar(5000)
+        post_excerpt: integer
+        post_status: varchar(20)
+        comment_status: varchar(20)
+        ping_status: varchar(20)
+        post_password: varchar(255)
+        post_name: varchar(200)
+        to_ping: varchar(5000)
+        pinged: varchar(5000)
+        post_modified: timestamp
+        post_modified_gmt: timestamp
+        post_content_filtered: varchar(500)
+        post_parent: integer
+        guid: varchar(255)
+        menu_order: integer
+        post_type: varchar(20)
+        post_mime_type: varchar(100)
+        comment_count: integer
+    cf_posts:
+      column_types:
+        ID: integer
+        post_author: integer
+        post_date: timestamp
+        post_date_gmt: timestamp
+        post_title: varchar(5000)
+        post_excerpt: integer
+        post_status: varchar(20)
+        comment_status: varchar(20)
+        ping_status: varchar(20)
+        post_password: varchar(255)
+        post_name: varchar(200)
+        to_ping: varchar(5000)
+        pinged: varchar(5000)
+        post_modified: timestamp
+        post_modified_gmt: timestamp
+        post_content_filtered: varchar(500)
+        post_parent: integer
+        guid: varchar(255)
+        menu_order: integer
+        post_type: varchar(20)
+        post_mime_type: varchar(100)
+        comment_count: integer
+    macd_posts:
+      column_types:
+        ID: integer
+        post_author: integer
+        post_date: timestamp
+        post_date_gmt: timestamp
+        post_title: varchar(5000)
+        post_excerpt: integer
+        post_status: varchar(20)
+        comment_status: varchar(20)
+        ping_status: varchar(20)
+        post_password: varchar(255)
+        post_name: varchar(200)
+        to_ping: varchar(5000)
+        pinged: varchar(5000)
+        post_modified: timestamp
+        post_modified_gmt: timestamp
+        post_content_filtered: varchar(500)
+        post_parent: integer
+        guid: varchar(255)
+        menu_order: integer
+        post_type: varchar(20)
+        post_mime_type: varchar(100)
+        comment_count: integer
+    site_lookup:
+      column_types:
+        SITE_ID: integer
+        PREFIX: varchar(10)
+        SITE_NAME: varchar(100)
+        SITE_URL: varchar(100)
+        LAUNCH_DATE: timestamp
