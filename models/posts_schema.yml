@@ -1,0 +1,84 @@
+version: 2
+models:
+- name: posts
+  description: A table containing all of the site specific post tables
+  columns:
+  - name: id
+    data_type: number
+    description: 'The post id'
+    tests:
+      - not_null #The aren't and shouldn't be any nulls
+  - name: post_author
+    data_type: number
+    description: 'The post author ID'
+    tests:
+      - not_null #The aren't and shouldn't be any nulls
+  - name: post_date
+    data_type: date
+    description: 'The date of the post'
+    tests:
+      - not_null #Posts must have dates
+  - name: post_date_gmt
+    data_type: date
+    description: 'The date of the post' #Will have to convert to a useable format for last question
+  - name: post_satus
+    data_type: varchar(20)
+    description: 'The post status'
+    tests:
+      - accepted_values:
+                  values: ['auto-draft','publish','inherit','draft'] #Only options
+      - not_null #Posts must always have their status
+  - name: comment_status
+    data_type: varchar(20)
+    description: 'The comment status'
+    tests:
+      - accepted_values:
+                  values: ['open','closed'] #Only options
+      - not_null #Either open or closed, no nulls
+  - name: ping_status
+    data_type: varchar(20)
+    description: 'The ping status'
+    tests:
+      - accepted_values:
+                  values: ['open','closed'] #Only options
+      - not_null #Either open or closed, no nulls
+  - name: post_modified
+    data_type: date
+    description: 'Date post modified'
+    tests:
+      - not_null
+  - name: post_parent
+    data_type: number
+    description: 'Post parent'
+    tests:
+      - not_null #All posts are modified
+  - name: guid
+    data_type: varchar(255)
+    description: 'url'
+    tests:
+      - not_null #All posts should have a link
+  - name: menu_order
+    data_type: number
+    description: 'Menu order'
+    tests:
+      - not_null #Unsure but there are no nulls
+  - name: post_type
+    data_type: varchar(20)
+    description: 'Type of post'
+    tests:
+      - not_null #All post have a type
+  - name: comment_count
+    data_type: number
+    description: 'Number of Comments'
+    tests:
+      - not_null #All posts have a comment count
+  - name: prefix
+    data_type: varchar(4)
+    description: 'Community prefix'
+    tests:
+      - not_null #All posts have a prefix
+
+ 
+      ## additional tests and columns go here.
+      ## remember that in yaml files spacing matters!
+
