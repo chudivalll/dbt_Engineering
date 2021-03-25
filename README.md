@@ -13,16 +13,6 @@ If you aren't on Mac, let us know before continuing.
 3. Make sure to run a `dbt seed --full-refresh` command from inside dev_env container!
 4. Begin [Challenge Section](#Challenges)
 
-#### Access to postgres:
-* **URL:** `localhost:5432`
-* **Username:** postgres
-* **Password:** postgres
-
-#### Access to PgAdmin:
-* **URL:** `http://localhost:5050`
-* **Username:** pgadmin4@pgadmin.org
-* **Password:** admin
-* if connecting to postgres from pgadmin, use host `datastreet` (containers use different network resolvers)
 
 ### Data Build Tool
 You will be using DBT to create and test models for our data. https://docs.getdbt.com/docs/introduction
