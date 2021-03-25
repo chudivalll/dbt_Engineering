@@ -6,8 +6,7 @@
 The environment is set up in docker to give you access to a Postgres database. You'll need to download Docker Desktop https://docs.docker.com/docker-for-mac/install/ (most of us are on Version 2.3.0.3).
 If you aren't on Mac, let us know before continuing.
 
-1. Clone the directory: `git clone git@bitbucket.org:union/data-challenge.git && cd ./data-challenge`
-2. Complete commands in [GIT section](#GIT)
+1. Complete commands in [GIT section](#GIT)
 2. Run `sh ./.dev_env/dev_env`
  - Shell prompts will tell you if Docker containers were setup properly
  - For more information on how DBT is setup [see section below](#Working-in-the-container)
